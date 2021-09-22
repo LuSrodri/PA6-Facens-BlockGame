@@ -11,7 +11,7 @@ body {
 }
 
 #main {
-    border: 5px solid blue;
+    border: 5px solid yellow;
     width: 1000px;
     height: 94%;
     margin: auto;
@@ -20,13 +20,13 @@ body {
 }
 
 h1#title {
-    color: blue;
+    color: yellow;
     margin: 200px auto 100px auto;
     width: 500px;
     text-align: center;
     font-size: 90px;
     background-color: black;
-    border: 2px solid blue;
+    border: 2px solid yellow;
 }
 
 div#divbtn {
@@ -42,12 +42,12 @@ a#btn {
     border: 2px solid black;
     padding: 15px;
     font-size: 75px;
-    background-color: blue;
+    background-color: yellow;
     text-align: center;
 }
   
 a#btn:hover {
-    background-color: cornflowerblue;
+    background-color: yellowgreen;
     border: 2px solid black;
     text-decoration: none;
     color: black;
