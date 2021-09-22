@@ -1,0 +1,54 @@
+
+html {
+    height: 100%;
+    overflow: hidden;
+    font-family: 'Righteous', cursive;
+}
+
+body {
+    background-color: black;
+    height: 100%;
+}
+
+#main {
+    border: 5px solid blue;
+    width: 1000px;
+    height: 94%;
+    margin: auto;
+    background-image: url("background.png");
+    background-size: 1000px 100%; 
+}
+
+h1#title {
+    color: blue;
+    margin: 200px auto 100px auto;
+    width: 500px;
+    text-align: center;
+    font-size: 90px;
+    background-color: black;
+    border: 2px solid blue;
+}
+
+div#divbtn {
+    margin: 0 auto;
+    text-align: center;
+}
+
+a#btn {
+    display: inline-block;
+    text-decoration: none;
+    color: black;
+    border-radius: 30%;
+    border: 2px solid black;
+    padding: 15px;
+    font-size: 75px;
+    background-color: blue;
+    text-align: center;
+}
+  
+a#btn:hover {
+    background-color: cornflowerblue;
+    border: 2px solid black;
+    text-decoration: none;
+    color: black;
+}
