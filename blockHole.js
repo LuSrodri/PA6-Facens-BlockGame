@@ -4,12 +4,23 @@ const context = canvas.getContext('2d');
 
 context.scale(20,20);
 
+function arenaSweep(){
+    let rowCount = 1;
+    outer: for (let y = arena.length - 1; y > 0 ; --y){
+        for(let x = 0; x < arena[y].length; ++x){
+            if(arena[y][x] === 0){
+                continue outer;
+            }
+        }
+        const row = arena.splice(y,1)[0].fill(0);
+        arena.unshift(row);
+        ++y;
+    }
+    
+    player.score += rowCount * 10;
+    rowCount += 1;
+}
 
-const matrix = [
-    [0, 0, 0],
-    [1, 1, 1,],
-    [0, 1, 0],
-];
 
 function collide(arena,player){//colisão do game com o chão e peças
     const [m, o] =[player.matrix,player.pos];
@@ -32,6 +43,54 @@ function createMAtrix(w,h){
     }
     return matrix;
 }
+
+function createPiece(type){
+    if(type === 'T'){
+        return [
+            [0, 0, 0],
+            [1, 1, 1],
+            [0, 1, 0],
+        ];
+    } else if(type == 'O'){
+        return [
+            [2, 2],
+            [2, 2],
+        ];
+    } else if(type == 'L'){
+        return [
+            [0, 3, 0],
+            [0, 3, 0],
+            [0, 3, 3],
+        ];
+    } else if(type == 'J'){
+        return [
+            [0, 4, 0],
+            [0, 4, 0],
+            [4, 4, 0],
+        ];
+    } else if(type == 'I'){
+        return [
+            [0, 0, 0, 0],
+            [5, 5, 5, 5],
+            [0, 0, 0, 0],
+            [0, 0, 0, 0],
+        ];
+    } else if(type == 'S'){
+        return [
+            [0, 6, 6],
+            [6, 6, 0],
+            [0, 0, 0],
+        ];
+    } else if(type == 'Z'){
+        return [
+            [7, 7, 0],
+            [0, 7, 7],
+            [0, 0, 0],
+        ];
+    }
+
+}
+
 function desenhar(){//cria a arena do game
     context.fillStyle = '#000';
 context.fillRect(0,0,canvas.clientWidth, canvas.height);
@@ -44,7 +103,7 @@ function desenharMatrix(matrix, offset){//cria peça
         matrix.forEach((linha,y)=>{
             linha.forEach((valor, x)=>{
                 if(valor!== 0){
-                    context.fillStyle = 'red';
+                    context.fillStyle = colors[valor];
                     context.fillRect(x + offset.x
                                     ,y + offset.y,1,1)
                 }
@@ -67,7 +126,9 @@ function playerDrop(){
     if(collide(arena, player)){
         player.pos.y--;
         merge(arena,player);
-        player.pos.y=0;
+        playerReset();
+        arenaSweep();
+        updateScore();
     }
     dropCounter=0;
 }
@@ -79,8 +140,32 @@ function playerMove(dir){//nao deixa passar para os lados
     }
 }
 
+function playerReset(){
+    const pieces = 'ILJOTSZ';
+    player.matrix = createPiece(pieces[pieces.length * Math.random() | 0]);
+    player.pos.y = 0;
+    player.pos.x = (arena[0].length / 2 | 0) -
+                    (player.matrix[0].length / 2 | 0);
+    if(collide(arena, player)){
+        arena.forEach(row => row.fill(0));
+        player.score = 0;
+        updateScore();
+    }
+}
+
 function playerRotate(dir){//chama a funcao que ira rodar a peça, se for Q(-1) gira para a esquerda e W(1) gira para a direita
+    const pos = player.pos.x;
+    let offset = 1;
     rotate(player.matrix, dir)
+    while (collide(arena, player)){
+        player.pos.x += offset;
+        offset = -(offset + (offset > 0 ? 1 : -1));
+        if (offset > player.matrix[0].length){
+            rotate(player.matrix, -dir);
+            player.pos.x=pos;
+            return;
+        }
+    }
 }
 function rotate(matrix,dir){//gira as pecas baseado na direcao
         for(let y = 0; y < matrix.length; ++y){
@@ -120,10 +205,26 @@ function update(time = 0){
     requestAnimationFrame(update)
 }
 
+function updateScore() {
+    document.getElementById('score').innerText = player.score;
+}
+
+const colors = [
+    null,
+    'red',
+    'blue',
+    'green',
+    'yellow',
+    'orange',
+    'violet',
+    'cyan',
+]
+
 const arena = createMAtrix(12,20);
 const player = {
-    pos:{x:5,y:5},
-    matrix:matrix,
+    pos:{x:0,y:0},
+    matrix: null,
+    score: 0,
 }
 
 document.addEventListener('keydown', event =>{//move com as setas e gira com Q e W 
@@ -134,11 +235,13 @@ if(event.keyCode === 37){//seta para a esquerda
 }else if(event.keyCode === 40){//Seta para baixo
     playerDrop();
 }else if(event.keyCode === 81){//Q
-playerRotate(-1);
+    playerRotate(-1);
 }else if(event.keyCode === 87){//W
     playerRotate(1);
 }
 })
 
+playerReset();
+updateScore();
 update();
 
