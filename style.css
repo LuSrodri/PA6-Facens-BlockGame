@@ -19,9 +19,9 @@ body {
     background-size: 1000px 100%; 
 }
 
-h1#title {
+h1.title {
     color: yellow;
-    margin: 150px auto 150px auto;
+    margin: 150px auto 0 auto;
     width: 500px;
     text-align: center;
     font-size: 90px;
@@ -30,12 +30,28 @@ h1#title {
     user-select: none;
 }
 
-div#divbtn {
+div.divbtn {
     margin: 0 auto;
     text-align: center;
 }
 
-a#btn {
+a.btn2 {
+    font-size: 35px;
+    width: 300px;
+}
+
+a.btn3 {
+    color: #202028;
+    background-color: yellow;
+}
+
+a.btn3:hover {
+    color: yellow;
+    background-color: #202028;
+}
+
+.btn {
+    margin: 50px auto 0 auto;
     display: inline-block;
     text-decoration: none;
     color: yellow;
@@ -46,7 +62,7 @@ a#btn {
     box-shadow: 10px 10px  black; 
 }
   
-a#btn:hover {
+.btn:hover {
     background-color: yellow;
     text-decoration: none;
     color: #202028;
