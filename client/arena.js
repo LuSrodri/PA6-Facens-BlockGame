@@ -5,10 +5,13 @@ class Arena{
             matrix.push(new Array(w).fill(0));
         }
         this.matrix = matrix;
+
+        this.events = new Events;
     }
 
     clear(){
         this.matrix.forEach(row => row.fill(0));
+        this.events.emit('matrix', this.matrix);
     }
 
     collide(player){//colisão do game com o chão e peças
@@ -33,6 +36,7 @@ class Arena{
                 }
             });
         });
+        this.events.emit('matrix', this.matrix);
     }
 
     sweep(){
@@ -51,6 +55,7 @@ class Arena{
             score += rowCount * 10;
             rowCount += 1;
         }
+        this.events.emit('matrix', this.matrix);
         return score;
         
     }
