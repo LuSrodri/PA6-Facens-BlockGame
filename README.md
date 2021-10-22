@@ -21,10 +21,11 @@
 
 
 <h3 style="margin-left:20px;">Como jogar</h3>
-​Primeiramente, certifique-se de que o node.js está instalado em seu computador:
-<b>```node -v```</b>
 
-​	Com a instalação executada, e com o node.js instalado no computador, seguir os passos para jogar:
+-	Primeiramente, certifique-se de que o node.js está instalado em seu computador: <br>
+``` node -v ```  
+
+​	Com a instalação executada, e com o node.js instalado no computador, seguir os passos para jogar: 
 
 <b>1º</b> - Entrar pasta /server com ```cd server``` e executar o comando ``` node ./main.js ``` no terminal (<b>IMPORTANTE</b>: não fechar o terminal);
 
