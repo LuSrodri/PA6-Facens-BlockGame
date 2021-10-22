@@ -46,10 +46,10 @@
 
 <h3 style="margin-left:20px;">O que falta fazer</h3>
 
- - Sincronizar o jogo entre os múltiplos jogadores, para que o jogo seja reiniciado para que todos na sala possam começar ao mesmo tempo;
+ - Sincronizar o jogo entre os múltiplos jogadores, para que o jogo seja reiniciado quando um novo jogador entra na sala;
  - Colocar uma condição para Ganhar o jogo, para que o jogo "não dure para sempre";
  - Colocar uma tela de fim de jogo para aparecer quando o jogador perde ou ganha;
- - Adaptar a tela do jogo para o uso no Liquid Galaxy, deixando somente uma arena por tela, e só mostrar as pontuações dos jogador.
+ - Adaptar a tela do jogo para o uso no Liquid Galaxy, deixando somente uma arena por aba, e só mostrar as pontuações do jogador.
 
 
 
