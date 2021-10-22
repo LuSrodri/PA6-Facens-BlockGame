@@ -14,7 +14,7 @@
 
 ​	Para a instalação do projeto, é necessário o Git instalado no computador:
 
-- No Git bash executar o comando " git clone https://github.com/LuSrodri/PA6-Facens-BlockGame.git ".
+- No Git bash executar o comando: ```git clone https://github.com/LuSrodri/PA6-Facens-BlockGame.git ```.
 
 ​	Com esses passos, o jogo estará pronto para jogar. Aproveite :)
 
@@ -24,7 +24,7 @@
 
 ​	Com a instalação executada, e com o node.js instalado no computador, seguir os passos para jogar:
 
-<b>1º</b> - Na pasta /server executar o comando " node ./main.js " no terminal (<b>IMPORTANTE</b>: não fechar o terminal);
+<b>1º</b> - Na pasta /server executar o comando ``` node ./main.js ``` no terminal (<b>IMPORTANTE</b>: não fechar o terminal);
 
 <b>2º</b> - Na pasta raiz do projeto, abrir o index.html manualmente.
 
