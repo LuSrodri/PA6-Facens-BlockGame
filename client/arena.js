@@ -1,4 +1,4 @@
-class Arena{
+class Arena{ //Contrói e atualiza a arena do jogo
     constructor(w, h){
         const matrix = [];
         while (h--){
@@ -9,12 +9,12 @@ class Arena{
         this.events = new Events;
     }
 
-    clear(){
+    clear(){ //Esvazia a arena do jogo
         this.matrix.forEach(row => row.fill(0));
         this.events.emit('matrix', this.matrix);
     }
 
-    collide(player){//colisão do game com o chão e peças
+    collide(player){//Checa se há colisão entre a peça e algum elemento da arena
         const [m, o] =[player.matrix,player.pos];
         for(let y = 0; y < m.length;y++){
             for(let x=0; x < m[y].length;x++){
@@ -28,7 +28,7 @@ class Arena{
         return false;
     };
 
-    merge(player){
+    merge(player){ //Assenta uma peça na arena
         player.matrix.forEach((linha,y)=>{
             linha.forEach((value, x)=>{
                 if(value!== 0){
@@ -39,7 +39,7 @@ class Arena{
         this.events.emit('matrix', this.matrix);
     }
 
-    sweep(){
+    sweep(){ //Apaga uma ou mais linhas da arena quando elas estão preenchidas por peças
         let rowCount = 1;
         let score = 0;
         outer: for (let y = this.matrix.length - 1; y > 0 ; --y){
@@ -52,7 +52,7 @@ class Arena{
             this.matrix.unshift(row);
             ++y;
     
-            score += rowCount * 10;
+            score += rowCount * 10; //Adiciona pontos para o jogador
             rowCount += 1;
         }
         this.events.emit('matrix', this.matrix);

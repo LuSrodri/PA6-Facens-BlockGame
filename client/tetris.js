@@ -1,4 +1,4 @@
-class Tetris{
+class Tetris{ //Construção do tetris (o conjunto inteiro de arena, jogador e outras caracteríticas importantes)
 
     constructor(element){
     
@@ -19,7 +19,7 @@ class Tetris{
         
 
 
-        this.colors = [
+        this.colors = [ //Cores das peças de tetris
             null,
             'red',
             'blue',
@@ -46,7 +46,7 @@ class Tetris{
         this.updateScore(0);
     }
 
-    desenhar(){//cria a arena do game
+    desenhar(){//Desenha a arena do jogo
         this.context.fillStyle = '#000';
         this.context.fillRect(0,0,this.canvas.clientWidth, this.canvas.height);
         this.desenharMatrix(this.arena.matrix,{x:0,y:0});
@@ -54,7 +54,7 @@ class Tetris{
     }
     
     
-    desenharMatrix(matrix, offset){//cria peça
+    desenharMatrix(matrix, offset){//Cria a peça sob o comando do jogador
             matrix.forEach((linha,y)=>{
                 linha.forEach((valor, x)=>{
                     if(valor!== 0){
@@ -67,11 +67,11 @@ class Tetris{
             });
     }
 
-    run(){
+    run(){ //Executa um ciclo do jogo (move as peças e altera a arena)
         this._update();
     }
 
-    serialize(){
+    serialize(){ //Tranforma dados em um JSON para ser enviado 
         return{
             arena:{
                 matrix:this.arena.matrix,  
@@ -85,14 +85,14 @@ class Tetris{
 
     }
 
-    unserialize(state){
+    unserialize(state){ //Extrai dados de JSON recebida pelo cliente
         this.arena = Object.assign(state.arena);
         this.player = Object.assign(state.player);
         this.updateScore(this.player.score);
         this.desenhar();
     }
 
-    updateScore(score) {
+    updateScore(score) { //Atualiza contador de pontos
         this.element.querySelector('.score').innerText = score;
     }
 }

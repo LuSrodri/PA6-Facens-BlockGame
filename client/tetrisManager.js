@@ -1,4 +1,4 @@
-class TetrisManager{
+class TetrisManager{ //Gerenciador de tetris
 
     constructor(document){
         this.document = document;
@@ -9,7 +9,7 @@ class TetrisManager{
 
     }
 
-    createPlayer(){
+    createPlayer(){ //Cria novos jogadores
         const element = document
             .importNode(this.template.content, true)
             .children[0];
@@ -24,13 +24,13 @@ class TetrisManager{
         return tetris;
     }
 
-    removePlayer(tetris){
+    removePlayer(tetris){ //Remove jogadores
         this.document.body.removeChild(tetris.element);
 
         this.instances = this.instances.filter(instance => instance !== tetris);
     }
 
-    sortPlayers(tetri){
+    sortPlayers(tetri){ //Ordena posição das arenas dentro da janela
         tetri.forEach(tetris => {
             this.document.body.appendChild(tetris.element);
         });
