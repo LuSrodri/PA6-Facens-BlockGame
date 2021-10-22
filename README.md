@@ -12,13 +12,9 @@
 
 <h3 style="margin-left:20px;">Instalação</h3>
 
-​	Para a instalação do projeto, é necessário o node.js e Git instalado no computador:
+​	Para a instalação do projeto, é necessário o Git instalado no computador:
 
-<b>1º</b> - No Git bash executar o comando " git clone https://github.com/LuSrodri/PA6-Facens-BlockGame.git " ;
-
-<b>2º</b> - Na pasta /server executar o comando " node ./main.js " no terminal <span style="color:red;">(importante: não fechar o terminal)</span>;
-
-<b>3º</b> - Na pasta raiz do projeto, abrir o index.html.
+- No Git bash executar o comando " git clone https://github.com/LuSrodri/PA6-Facens-BlockGame.git ".
 
 ​	Com esses passos, o jogo estará pronto para jogar. Aproveite :)
 
@@ -26,17 +22,21 @@
 
 <h3 style="margin-left:20px;">Como jogar</h3>
 
-​	Com a instalação executada, e o index.html aberto, deve-se fazer os seguintes passos:
+​	Com a instalação executada, e com o node.js instalado no computador, seguir os passos para jogar:
 
-<b>1º</b> - Clicar em PLAY;
+<b>1º</b> - Na pasta /server executar o comando " node ./main.js " no terminal (<b>IMPORTANTE</b>: não fechar o terminal);
 
-<b>2º</b> - Clicar em JOIN A GAME;
+<b>2º</b> - Na pasta raiz do projeto, abrir o index.html manualmente.
 
-<b>3º</b> - Com o jogo inicializado, utiliza-se as teclas A e D para posicionar as peças;
+<b>3º</b> - Clicar em PLAY;
 
-<b>4º </b>- Utiliza-se a tecla S para descer a peça rapidamente;
+<b>4º</b> - Clicar em JOIN A GAME;
 
-<b>5º</b> - Utiliza-se as teclas Q e E para rotacionar as peças.
+<b>5º</b> - Com o jogo inicializado, utiliza-se as teclas A e D para posicionar as peças;
+
+<b>6º </b>- Utiliza-se a tecla S para descer a peça rapidamente;
+
+<b>7º</b> - Utiliza-se as teclas Q e E para rotacionar as peças.
 
 ​	O jogo só acaba quando as peças atingirem o topo, para pontuar é necessário formar uma linha horizontal completa.
 
@@ -46,7 +46,7 @@
 
 <h3 style="margin-left:20px;">O que falta fazer</h3>
 
- - Sincronizar o jogo entre os múltiplos jogadores, para que não entrem durante o jogo;
+ - Sincronizar o jogo entre os múltiplos jogadores, para que o jogo seja reiniciado para que todos na sala possam começar ao mesmo tempo;
  - Colocar uma condição para Ganhar o jogo, para que o jogo "não dure para sempre";
  - Colocar uma tela de fim de jogo para aparecer quando o jogador perde ou ganha;
  - Adaptar a tela do jogo para o uso no Liquid Galaxy, deixando somente uma arena por tela, e só mostrar as pontuações dos jogador.
