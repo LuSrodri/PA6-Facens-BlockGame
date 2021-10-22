@@ -1,6 +1,8 @@
-Block Game
 
-### 
+
+<h1 style="text-align: center;">Block Game</h1>
+
+
 
 <h3 style="margin-left:20px;">Descrição</h3>
 
