@@ -27,7 +27,7 @@
 
 ​	Com a instalação executada, e com o node.js instalado no computador, seguir os passos para jogar: 
 
-<b>1º</b> - Entrar pasta /server com ```cd server``` e executar o comando ``` node ./main.js ``` no terminal (<b>IMPORTANTE</b>: não fechar o terminal);
+<b>1º</b> - Entrar pasta "/server" com ```cd server``` e executar o comando ``` node ./main.js ``` no terminal (<b>IMPORTANTE</b>: não fechar o terminal);
 
 <b>2º</b> - Na pasta raiz do projeto, abrir o index.html manualmente.
 
