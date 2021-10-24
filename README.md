@@ -1,6 +1,6 @@
 
 
-<h1 style="text-align: center; color: red;">Block Game</h1>
+<h1 style="text-align: center;">Block Game</h1>
 
 
 
