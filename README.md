@@ -5,7 +5,9 @@
 
 ## Description
   
-Our project has as the main goal the development of a web multiplayer game inspired by the famous Tetris, where up to 4 players can play simultaneously. Tetris is a super popular eletronic game that allows players to rotate falling blocks strategically to <b>clear levels</b> while earning points. The goal of the game is to prevent the blocks from stacking up to the top of the screen for as long as possible. When it happens, the blocks reach the top, it's game over. Besides being fun it's awesome way to instigate competition between players.
+Our project has as the main goal the development of a web multiplayer game inspired by the famous Tetris, where up to 4 players can play simultaneously.
+
+Tetris is a super popular eletronic game that allows players to rotate falling blocks strategically to <b>clear levels</b> while earning points. The goal of the game is to prevent the blocks from stacking up to the top of the screen for as long as possible. When it happens, the blocks reach the top, it's game over. Besides being fun it's an awesome way to instigate competition between players.
 
 # 📝 Before Running
 
