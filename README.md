@@ -1,66 +1,70 @@
+# 🕹️ Block Game
+<p align="center">
+<img src="https://user-images.githubusercontent.com/70177919/139168074-ce9e0ad8-e503-4572-b2e2-4673796c3cf1.png" width="100%">
+</p>
 
+## Description
+  
+Our project has as the main goal the development of a web multiplayer game inspired by the famous Tetris, where up to 4 players can play simultaneously. Tetris is a super popular eletronic game that allows players to rotate falling blocks strategically to <b>clear levels</b> while earning points. The goal of the game is to prevent the blocks from stacking up to the top of the screen for as long as possible. When it happens, the blocks reach the top, it's game over. Besides being fun it's awesome way to instigate competition between players.
 
-<h1 style="text-align: center;">Block Game</h1>
+# 📝 Before Running
 
+<b>1º</b> - You will need an internet navigator and the Git Bash installed.
 
+<b>2º</b> - Make sure **node.js** is also installed on the machine.
 
-<h3 style="margin-left:20px;">Descrição</h3>
+## 💻 Installing Project Locally
 
-​	Nosso projeto tem, como objetivo, o desenvolvimento de um jogo web multiplayer inspirado no Tetris, onde até 4 pessoas pode jogar de forma simultânea. Tetris é jogo eletrônico muito popular onde consiste em empilhar tetraminós que descem a tela de forma que completem linhas horizontais. Quando uma linha se forma, ela se desintegra, as camadas superiores descem, e o jogador ganha pontos. Quando a pilha de peças chega ao topo da tela, a partida se encerra e o jogador perde. Além de ser divertido, é uma ótima maneira de instigar uma competição entre seus jogadores.
+- Clone the repository on Git Bash with the command:
 
+```git clone https://github.com/LuSrodri/PA6-Facens-BlockGame.git ```
 
+- Verify if you have installed node.js in your computer: 
 
-<h3 style="margin-left:20px;">Instalação</h3>
-
-​	Para a instalação do projeto, é necessário o Git instalado no computador:
-
-- No Git bash executar o comando: ```git clone https://github.com/LuSrodri/PA6-Facens-BlockGame.git ```.
-
-​	Com esses passos, o jogo estará pronto para jogar. Aproveite :)
-
-
-
-<h3 style="margin-left:20px;">Como jogar</h3>
-
--	Primeiramente, certifique-se de que o node.js está instalado em seu computador: <br>
 ``` node -v ```  
 
-​	Com a instalação executada, e com o node.js instalado no computador, seguir os passos para jogar: 
+Now the game is ready to run. Enjoy! :)
 
-<b>1º</b> - Entrar na pasta "/server" com ```cd server``` e executar o comando ``` node ./main.js ``` no terminal (<b>IMPORTANTE</b>: não fechar o terminal);
+## 💻 Running Project 
 
-<b>2º</b> - Na pasta raiz do projeto, abrir o index.html manualmente.
+-	Firstly, open Git Bash, if the repository is already cloned and node.js installed follow the next steps:
 
-<b>3º</b> - Clicar em PLAY;
+<b>1º</b> - Enter the project's file ``` cd PA6-Facens-BlockGame ``` then enter in "/server" with ```cd server``` and execute the command ``` node ./main.js ``` at the terminal (<b> I M P O R T A N T</b>: do not close the terminal);
 
-<b>4º</b> - Clicar em JOIN A GAME;
+<b>2º</b> - In the project's root folder, open the index.html manually.
 
-<b>5º</b> - Com o jogo inicializado, utiliza-se as teclas A e D para posicionar as peças;
+<b>3º</b> - Click on PLAY;
 
-<b>6º </b>- Utiliza-se a tecla S para descer a peça rapidamente;
+<b>4º</b> - Click on JOIN A GAME;
 
-<b>7º</b> - Utiliza-se as teclas Q e E para rotacionar as peças.
+<b>5º</b> - With the game inicialized, use the keys 'A' and 'D' to move the pieces;
 
-​	O jogo só acaba quando as peças atingirem o topo, para pontuar é necessário formar uma linha horizontal completa.
+<b>6º </b>- Use the key 'S' to drop the piece faster;
 
-​	Com o link gerado quando entra em um jogo, é possível abrir em outra aba para inicializar outra arena, permitindo múltiplos jogadores.
+<b>7º</b> - Uuse the keys 'Q' and 'E' to rotate the pieces.
 
+​ The game is only over when a piece reach the top, to score is necessary clear levels - burn lines - completing a line with block without gapes.	
 
-
-<h3 style="margin-left:20px;">O que falta fazer</h3>
-
- - Sincronizar o jogo entre os múltiplos jogadores, para que o jogo seja reiniciado quando um novo jogador entra na sala;
- - Colocar uma condição para Ganhar o jogo, para que o jogo "não dure para sempre";
- - Colocar uma tela de fim de jogo para aparecer quando o jogador perde ou ganha;
- - Adaptar a tela do jogo para o uso no Liquid Galaxy, deixando somente uma arena por aba, e só mostrar as pontuações do jogador.
+​	Using the game's generated link is possible to open another tab and initialize another arena, allowing multiplayer mode.
 
 
+## 📝 What's missing - TO DO
 
-<h3 style="margin-left:20px;">Tecnologias utilizadas</h3>
+ - Sync the game between the multplayers, so when the game restart when a new player enters the room;
+ - Create a condition to Win the Game, so it doesn't "last for ever";
+ - Make the End Game screen appears when a player loses or win;
 
-- Para o <b>Front-end</b> foi utilizado HTML, para estruturar o site, e CSS, para estilizar o site.
-- Para a parte do <b>Jogo</b> foi utilizado JavaScript para a lógica, HTML para estruturar e CSS para estilizar. 
-- Para a parte de <b>Servidor</b> foi utilizado o node.js e WebSocket, para permitir vários jogadores simultâneos.
+## 📱 Technologies 
+
+- <b>Front-end</b> 
+   - HTML - site's structure
+   - CSS - site's style.
+- <b>Game</b> 
+   - JavaScript - game's logic
+   - HTML - game's structure
+   - CSS - game's style
+- <b>Server</b> 
+   - node.js e WebSocket - to allow multiplayer
 
 
 
