@@ -43,7 +43,7 @@ Now the game is ready to run. Enjoy! :)
 
 <b>6º </b>- Use the key 'S' to drop the piece faster;
 
-<b>7º</b> - Uuse the keys 'Q' and 'E' to rotate the pieces.
+<b>7º</b> - Use the keys 'Q' and 'E' to rotate the pieces.
 
 ​ The game is only over when a piece reach the top, to score is necessary clear levels - burn lines - completing a line with block without gapes.	
 
