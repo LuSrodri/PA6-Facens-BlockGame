@@ -9,7 +9,7 @@ Our project has as the main goal the development of a web multiplayer game inspi
 
 Tetris is a super popular eletronic game that allows players to rotate falling blocks strategically to <b>clear levels</b> while earning points. The goal of the game is to prevent the blocks from stacking up to the top of the screen for as long as possible. When it happens, the blocks reach the top, it's game over. Besides being fun it's an awesome way to instigate competition between players.
 
-# 📝 Before Running
+## 📝 Before Running
 
 <b>1º</b> - You will need an internet navigator and the Git Bash installed.
 
@@ -52,7 +52,7 @@ Now the game is ready to run. Enjoy! :)
 
 ## 📝 What's missing - TO DO
 
- - Sync the game between the multplayers, so when the game restart when a new player enters the room;
+ - Sync the game between the multplayers, so the game restarts when a new player enters the room;
  - Create a condition to Win the Game, so it doesn't "last for ever";
  - Make the End Game screen appears when a player loses or win;
 
