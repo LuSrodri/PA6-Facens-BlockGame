@@ -67,3 +67,39 @@ a.btn3:hover {
     text-decoration: none;
     color: #202028;
 }
+#ranking{
+    margin: auto;
+    width: 60%;
+   background: #202028;
+   padding-bottom: 5px;
+}
+.player{
+    border: 1px solid white;
+    margin: 5px;
+    padding: 5px;
+    color: aliceblue;
+    width: 50%;
+    margin-left: 25%;
+    margin-right: 25%;
+    display: flex;
+    justify-content:space-around;
+}
+
+.number{
+    float: left;
+    
+}
+
+.point{
+    float: right;
+}
+
+#button-menu{
+    font-size: 25px;
+    float: left;
+    margin-top: 10px;
+    background: #058621;
+    color: antiquewhite;
+    font-family: 'Righteous', cursive;
+
+}
