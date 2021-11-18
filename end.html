@@ -16,43 +16,29 @@
             <button type="button" id="button-menu" onclick="window.location.href='./index.html'">Menu Principal</button>
         <div id="ranking">
             <h1 class="title">Ranking</h1>
-            <!-- <h1 class="title">Ranking</h1> -->
         <div id="players">
-        <!-- </div>
-        <div class="player">
-            <p class="number1"> </p>
-            <p class="points"> </p>
-        </div>
-        <div class="player">
-            <p class="number">player 2 </p>
-            <p class="points"> 100 pontos</p>
-        </div>
-        <div class="player">
-            <p class="number">player 3 </p>
-            <p class="points"> 100 pontos</p>
-        </div>   -->
         </div>  
     </div>
     
 
     <script>
 
-        function populateRanking(){
-
-        
-       for(let i=0;i<5;i++)
+        clients = JSON.parse(sessionStorage.getItem("this.tetrisManager.instances"));
+        console.log(clients);
+        function populateRanking(){       
+       for(let i=0;i<5/*NUMERO DE JOGADORES*/;i++)
         {
             const div = document.createElement('div');
             div.setAttribute("class","player")
 
             const player = document.createElement('p');
             player.setAttribute("class","number");
-            player.innerText = `player ${i}`;
+            player.innerText = `player ${i+1}`;
             div.appendChild(player);
             
             const points = document.createElement('p');
             points.setAttribute("class","points");
-            points.innerText = `${i+10} pontos`;
+            points.innerText = `${i/*score*/} pontos`;
             div.appendChild(points);
 
             document.getElementById("players").appendChild(div);

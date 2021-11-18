@@ -94,9 +94,9 @@ class Tetris{ //Construção do tetris (o conjunto inteiro de arena, jogador e o
 
     updateScore(score) { //Atualiza contador de pontos
         this.element.querySelector('.score').innerText = score;
-        if(score ==150 )
+        if(score >=10 )
         {
-            window.location.href = './end.html';
+           window.location.href = './end.html'; 
         }
     }
     

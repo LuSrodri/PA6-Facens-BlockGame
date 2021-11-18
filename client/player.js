@@ -103,6 +103,19 @@ class Player{ //Classe do jogador do jogo
         this.events.emit('matrix', this.matrix);
     }
 
+    resetAll(){ //Quando uma peça é assentada cria uma nova no topo da arena
+        const pieces = 'ILJOTSZ';
+        this.matrix = this.createPiece(pieces[pieces.length * Math.random() | 0]); //Gera uma peça aleatória
+        this.pos.y = 0;
+        this.pos.x = (this.arena.matrix[0].length / 2 | 0) -
+                        (this.matrix[0].length / 2 | 0);
+        this.arena.clear();
+        this.score = 0;
+        this.events.emit('score', this.score);
+        this.events.emit('pos', this.pos);
+        this.events.emit('matrix', this.matrix);
+    }
+
     rotate(dir){//chama a funcao que ira rodar a peça, se for Q(-1) gira para a esquerda e W(1) gira para a direita
         const pos = this.pos.x;
         let offset = 1;
@@ -149,3 +162,5 @@ class Player{ //Classe do jogador do jogo
 
     
 }
+
+module.exports = Player;
