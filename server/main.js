@@ -58,6 +58,19 @@ function broadcastSession(session){ //Envia uma mensagem para todos os clientes
     })
 }
 
+function broadcastGameOver(session, score){ //Envia uma mensagem para todos os clientes
+    const clients = [...session.clients];
+    clients.forEach(client =>{
+        client.send({
+            type: 'end-game',
+            peers: {
+                you: client.id,
+                score: score,
+            },
+        });
+    })
+}
+
 server.on('connection', conn =>{ //Quando a conexão for estabelecida
     console.log('Conexão estabelecida');
     const client = createClient(conn);
@@ -86,6 +99,17 @@ server.on('connection', conn =>{ //Quando a conexão for estabelecida
             const [key, value] = data.state;
             client.state[data.fragment][key] = value;
             client.broadcast(data); //Envia essas mudanças para os outros clientes
+            if(key === 'score'){
+                
+                client.session.score[client.id] = value;
+                //console.log(client.session.score);
+                
+                if(value>=200){
+
+                    broadcastGameOver(client.session, client.session.score);
+
+                }
+            }
         }
     });
 
@@ -100,7 +124,6 @@ server.on('connection', conn =>{ //Quando a conexão for estabelecida
         }
 
         broadcastSession(session); //Envia aos clientes uma mensagem que diz que um cliente saiu da sessão
-
         console.log(sessions);
     });
 });

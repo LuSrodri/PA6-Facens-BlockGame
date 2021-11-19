@@ -113,6 +113,9 @@ class ConnectionManager{ //Gerenciador de conexão do cliente com o servidor
             this.updateManager(data.peers);
         } else if (data.type === 'state-update'){
             this.updatePeer(data.clientId, data.fragment, data.state);
+        } else if (data.type ==='end-game'){
+            //console.log(data.peers.score);
+            this.endGame(data.peers.score);
         }
     }
 
@@ -120,5 +123,14 @@ class ConnectionManager{ //Gerenciador de conexão do cliente com o servidor
         const msg = JSON.stringify(data);
         console.log('sending message', msg);
         this.conn.send(msg);
+    }
+
+    endGame(scoreDict){ //Vai para a tela de pontuação
+        let score = [];
+        for(var key in scoreDict){
+            score.push(scoreDict[key]);
+        }
+        //console.log(score.toString());
+        window.location.href = './end.html?' + score.toString();
     }
 }

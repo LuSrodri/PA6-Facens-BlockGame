@@ -162,5 +162,3 @@ class Player{ //Classe do jogador do jogo
 
     
 }
-
-module.exports = Player;
