@@ -69,14 +69,15 @@ class ConnectionManager{ //Gerenciador de conexão do cliente com o servidor
 
     updateManager(peers){ //Recebe alterações na quantidade de jogadores dentro da sessão
         const me = peers.you;
-        //const clients = peers.clients.filter(client => me !== client.id);
-        //clients.forEach(client =>{
-        //    if (!this.peers.has(client.id)){ //Se entrou um jogador novo na sessão
+        const clients = peers.clients.filter(client => me !== client.id);
+        clients.forEach(client =>{
+            if (!this.peers.has(client.id)){ //Se entrou um jogador novo na sessão
         //        const tetris = this.tetrisManager.createPlayer();
         //        tetris.unserialize(client.state);
-        //        this.peers.set(client.id, tetris);
-        //    }
-        //});
+                this.peers.set(client.id, 0);
+                this.localTetris.player.resetAll();
+            }
+        });
 
         //[...this.peers.entries()].forEach(([id,tetris]) => { //Se um dos jogadores saírem da sessão
         //    if(!clients.some(client => client.id === id)){
@@ -90,7 +91,7 @@ class ConnectionManager{ //Gerenciador de conexão do cliente com o servidor
         //this.tetrisManager.sortPlayers(sorted); //Ordena posição das arenas dos jogadores baseados na ordem de entrada na sessão
     }
 
-    updatePeer(id, fragment, [key, value]){ //Houve alteração de movimento e arena dos outros jogadores
+    //updatePeer(id, fragment, [key, value]){ //Houve alteração de movimento e arena dos outros jogadores
         //if(!this.peers.has(id)){
         //    throw new Error('Client does not exist', id);
         //}
@@ -103,14 +104,14 @@ class ConnectionManager{ //Gerenciador de conexão do cliente com o servidor
         //} else {
         //    tetris.desenhar();
         //}
-    }
+    //}
 
     receive(msg){ //Recebe mensagens do servidor e executa comandos baseados no tipo de mensagem
         const data = JSON.parse(msg);
         if(data.type === 'session-created'){
             window.location.hash = data.id;
         } else if (data.type ==='session-broadcast'){
-            //this.updateManager(data.peers);
+            this.updateManager(data.peers);
         } else if (data.type === 'state-update'){
             //this.updatePeer(data.clientId, data.fragment, data.state);
         } else if (data.type ==='end-game'){
