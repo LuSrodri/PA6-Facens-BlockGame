@@ -25,14 +25,14 @@ class TetrisManager{ //Gerenciador de tetris
     }
 
     removePlayer(tetris){ //Remove jogadores
-        this.document.body.removeChild(tetris.element);
+        //this.document.body.removeChild(tetris.element);
 
         this.instances = this.instances.filter(instance => instance !== tetris);
     }
 
     sortPlayers(tetri){ //Ordena posição das arenas dentro da janela
-        tetri.forEach(tetris => {
-            this.document.body.appendChild(tetris.element);
-        });
+        //tetri.forEach(tetris => {
+        //    this.document.body.appendChild(tetris.element);
+        //});
     }
 }
